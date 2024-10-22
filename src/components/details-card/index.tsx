@@ -318,7 +318,7 @@ const DetailsCard = ({ profile, loading, social, github }: Props) => {
                 <ListItem
                   icon={<FaStackOverflow />}
                   title="Stack Overflow:"
-                  value={social.stackoverflow.split('/').slice(-1)}
+                  value={"JuanjoLopez19"}
                   link={`https://stackoverflow.com/users/${social.stackoverflow}`}
                 />
               )}
