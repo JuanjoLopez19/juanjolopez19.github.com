@@ -44,6 +44,7 @@ const CONFIG = {
     phone: '',
     email: 'juanjoselopez@usal.es',
     stackoverflow: '24182064',
+    medium: 'juanjolopez19',
   },
   resume: {
     fileUrl:
@@ -102,7 +103,11 @@ const CONFIG = {
   ],
   publications: [],
   // Display articles from your medium or dev account. (Optional)
-  blog: {},
+  blog: {
+    source: 'medium',
+    username: 'juanjolopez19',
+    limit: 3,
+  },
   googleAnalytics: {
     id: 'G-TM0MG46RQD', // GA3 tracking id/GA4 tag id UA-XXXXXXXXX-X | G-XXXXXXXXXX
   },
