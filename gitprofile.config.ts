@@ -24,7 +24,7 @@ const CONFIG = {
         },
       },
       manual: {
-        projects: ['JuanjoLopez19/AutomatAPI', 'JuanjoLopez19/GungeonFinder'], // List of repository names to display. example: ['arifszn/my-project1', 'arifszn/my-project2']
+        projects: ['JuanjoLopez19/AutomatAPI', 'JuanjoLopez19/GungeonFinder', 'JuanjoLopez19/Goose'], // List of repository names to display. example: ['arifszn/my-project1', 'arifszn/my-project2']
       },
     },
     external: {
