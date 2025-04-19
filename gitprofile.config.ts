@@ -12,43 +12,61 @@ const CONFIG = {
   base: '/',
   projects: {
     github: {
-      display: true, // Display GitHub projects?
+      display: true,
       header: 'Github Projects',
-      mode: 'manual', // Mode can be: 'automatic' or 'manual'
+      mode: 'manual',
       automatic: {
-        sortBy: 'stars', // Sort projects by 'stars' or 'updated'
-        limit: 8, // How many projects to display.
+        sortBy: 'stars',
+        limit: 8,
         exclude: {
-          forks: true, // Forked projects will not be displayed if set to true.
-          projects: ['JuanjoLopez19/assets'], // These projects will not be displayed. example: ['arifszn/my-project1', 'arifszn/my-project2']
+          forks: true,
+          projects: ['JuanjoLopez19/assets'],
         },
       },
       manual: {
-        projects: ['JuanjoLopez19/AutomatAPI', 'JuanjoLopez19/GungeonFinder', 'JuanjoLopez19/Goose'], // List of repository names to display. example: ['arifszn/my-project1', 'arifszn/my-project2']
+        projects: [
+          'JuanjoLopez19/AutomatAPI',
+          'JuanjoLopez19/GungeonFinder',
+          'JuanjoLopez19/Goose',
+          'JuanjoLopez19/url-shortener-fastapi',
+        ], // List of repository names to display. example: ['arifszn/my-project1', 'arifszn/my-project2']
       },
     },
     external: {
-      header: 'My Projects',
-      // To hide the `External Projects` section, keep it empty.
-      projects: [],
+      header: 'Personal Projects',
+      projects: [
+        {
+          title: 'MercaSaver',
+          description:
+            'Built a tool that track the expenses from the supermarket brand ”Mercadona”',
+          imageUrl: 'https://merca-saver.vercel.app/static/assets/logo.webp',
+          link: 'https://merca-saver.vercel.app',
+        },
+        {
+          title: 'FastCutPy',
+          description:
+            'Built serverless url shortener with FastAPI and MongoDB',
+          imageUrl: 'https://fastcutpy.vercel.app/static/logo.webp',
+          link: 'https://fastcutpy.vercel.app/',
+        },
+      ],
     },
   },
   seo: {
     title: 'Juanjo López | Software Engineer',
-    description:
-      'Software Engineer | Full Stack Developer | BISITE Research Group',
+    description: 'Backend Developer | BISITE Research Group',
     imageURL: 'https://avatars.githubusercontent.com/u/92031193?v=4',
   },
   social: {
     linkedin: 'juanjolopezgomez',
     phone: '',
-    email: 'juanjoselopez@usal.es',
+    email: 'juanjo.lopez.gomez.19@gmail.com',
     stackoverflow: '24182064',
     medium: 'juanjolopez19',
   },
   resume: {
     fileUrl:
-      'https://github.com/JuanjoLopez19/assets/raw/refs/heads/main/CV%20English.pdf', // Empty fileUrl will hide the `Download Resume` button.
+      'https://github.com/JuanjoLopez19/assets/raw/refs/heads/main/CV_English.pdf', // Empty fileUrl will hide the `Download Resume` button.
   },
   skills: [
     'JavaScript',
@@ -61,7 +79,6 @@ const CONFIG = {
     'ExpressJs',
     'VueJS',
     'Angular',
-    'Codeigniter',
     'MongoDB',
     'PostgreSQL',
     'Redis',
@@ -73,9 +90,16 @@ const CONFIG = {
   experiences: [
     {
       company: 'BISITE Research Group',
+      position: 'Backend Developer',
+      from: 'May 2023',
+      to: 'Present',
+      companyLink: 'https://bisite.usal.es/',
+    },
+    {
+      company: 'BISITE Research Group',
       position: 'Full Stack Developer',
       from: 'March 2022',
-      to: 'Present',
+      to: 'April 2023',
       companyLink: 'https://bisite.usal.es/',
     },
     {
@@ -121,7 +145,7 @@ const CONFIG = {
 
     // Hides the switch in the navbar
     // Useful if you want to support a single color mode
-    disableSwitch: false,
+    disableSwitch: true,
 
     // Should use the prefers-color-scheme media-query,
     // using user system preferences, instead of the hardcoded defaultTheme
