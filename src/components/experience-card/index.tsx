@@ -1,5 +1,6 @@
-import React, { Fragment } from 'react';
-import { SanitizedExperience } from '../../interfaces/sanitized-config';
+import type React from 'react';
+import { Fragment } from 'react';
+import type { SanitizedExperience } from '../../interfaces/sanitized-config';
 import { skeleton } from '../../utils';
 
 const ListItem = ({

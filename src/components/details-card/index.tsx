@@ -22,9 +22,9 @@ import {
 import { FaSquareThreads } from 'react-icons/fa6';
 import { MdLocationOn } from 'react-icons/md';
 import { RiMailFill, RiPhoneFill } from 'react-icons/ri';
-import { SiResearchgate, SiTwitter, SiUdemy } from 'react-icons/si';
-import { Profile } from '../../interfaces/profile';
-import {
+import { SiResearchgate, SiUdemy, SiX } from 'react-icons/si';
+import type { Profile } from '../../interfaces/profile';
+import type {
   SanitizedGithub,
   SanitizedSocial,
 } from '../../interfaces/sanitized-config';
@@ -212,7 +212,7 @@ const DetailsCard = ({ profile, loading, social, github }: Props) => {
               )}
               {social?.twitter && (
                 <ListItem
-                  icon={<SiTwitter />}
+                  icon={<SiX />}
                   title="Twitter:"
                   value={social.twitter}
                   link={`https://twitter.com/${social.twitter}`}
@@ -318,7 +318,7 @@ const DetailsCard = ({ profile, loading, social, github }: Props) => {
                 <ListItem
                   icon={<FaStackOverflow />}
                   title="Stack Overflow:"
-                  value={"JuanjoLopez19"}
+                  value={'JuanjoLopez19'}
                   link={`https://stackoverflow.com/users/${social.stackoverflow}`}
                 />
               )}

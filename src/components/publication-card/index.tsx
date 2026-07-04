@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { SanitizedPublication } from '../../interfaces/sanitized-config';
+import type { SanitizedPublication } from '../../interfaces/sanitized-config';
 import { skeleton } from '../../utils';
 
 const PublicationCard = ({

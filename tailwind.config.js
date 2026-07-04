@@ -1,17 +1,11 @@
+import daisyui from 'daisyui';
 import CONFIG from './gitprofile.config';
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
-  theme: {
-    extend: {},
-  },
-  plugins: [require('daisyui')],
+  plugins: [daisyui],
   daisyui: {
     logs: false,
-    themes: [
-      ...CONFIG.themeConfig.themes,
-      { procyon: CONFIG.themeConfig.customTheme },
-    ],
+    themes: CONFIG.themeConfig.themes,
   },
 };

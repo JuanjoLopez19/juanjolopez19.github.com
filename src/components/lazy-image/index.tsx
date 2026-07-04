@@ -1,4 +1,4 @@
-import { useState, Fragment, useEffect } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 
 /**
  * LazyImage component.

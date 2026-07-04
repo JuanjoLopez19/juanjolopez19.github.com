@@ -1,5 +1,5 @@
-import React from 'react';
-import { SanitizedCertification } from '../../interfaces/sanitized-config';
+import type React from 'react';
+import type { SanitizedCertification } from '../../interfaces/sanitized-config';
 import { skeleton } from '../../utils';
 
 const ListItem = ({
