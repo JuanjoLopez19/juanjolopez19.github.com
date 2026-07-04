@@ -380,9 +380,9 @@ interface Config {
   social?: Social;
 
   /**
-   * Skill list
+   * Skills list
    */
-  skills?: Array<string>;
+  skills?: Record<string, Array<string>>;
 
   /**
    * Experience list

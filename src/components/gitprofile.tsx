@@ -251,14 +251,39 @@ const GitProfile = ({ config }: { config: Config }) => {
 
 	const skillGroups = useMemo(() => {
 		const groups = [
-			{ label: "Languages / Backend", skills: [] as string[] },
-			{ label: "Data / Infrastructure", skills: [] as string[] },
-			{ label: "Frontend / Tools", skills: [] as string[] },
+			{ label: "Backend", skills: [] as string[] },
+			{ label: "Databases", skills: [] as string[] },
+			{ label: "AI", skills: [] as string[] },
+			{ label: "DevOps", skills: [] as string[] },
 		];
-		sanitizedConfig.skills.forEach((skill, index) => {
-			groups[index % groups.length].skills.push(skill);
-		});
-		return groups;
+		Object.entries(sanitizedConfig.skills).forEach(
+			([key, value]: [string, Array<string>]) => {
+				switch (key) {
+					case "Backend":
+						for (const skill of value) {
+							groups[0].skills.push(skill);
+						}
+						break;
+					case "Databases":
+						for (const skill of value) {
+							groups[1].skills.push(skill);
+						}
+						break;
+					case "AI":
+						for (const skill of value) {
+							groups[2].skills.push(skill);
+						}
+						break;
+					case "DevOps":
+					default:
+						for (const skill of value) {
+							groups[3].skills.push(skill);
+						}
+						break;
+				}
+			},
+		);
+		return groups as Array<{ label: string; skills: string[] }>;
 	}, [sanitizedConfig.skills]);
 
 	const toggleTheme = () => {
@@ -293,10 +318,11 @@ const GitProfile = ({ config }: { config: Config }) => {
 						{sanitizedConfig.github.username}
 					</a>
 					<nav aria-label="Main navigation">
-						<a href="#projects">Projects</a>
-						<a href="#stack">Stack</a>
 						<a href="#experience">Experience</a>
 						<a href="#education">Education</a>
+						<a href="#stack">Stack</a>
+						<a href="#projects">Projects</a>
+						<a href="#certifications">Certifications</a>
 					</nav>
 					<div className="nav-actions">
 						<button
@@ -340,8 +366,9 @@ const GitProfile = ({ config }: { config: Config }) => {
 							</pre>
 							<h1>AI & Backend Developer</h1>
 							<p className="terminal-intro">
-								{profile?.bio ||
-									"Building robust, scalable infrastructure and high-performance user interfaces. Root access granted to explore projects, experience, and technical capabilities."}
+								{
+									"I build production-grade AI systems and scalable backend platforms."
+								}
 							</p>
 							<div className="system-meta">
 								<span className="hired">[+] STATUS: HIRED</span>
@@ -355,7 +382,64 @@ const GitProfile = ({ config }: { config: Config }) => {
 						</div>
 					</section>
 
-					{sanitizedConfig.skills.length > 0 && (
+					<div className="resume-grid">
+						{sanitizedConfig.experiences.length > 0 && (
+							<section className="terminal-section" id="experience">
+								<SectionHeading number={sectionNumber++} title="EXPERIENCE" />
+								<div className="experience-list">
+									{sanitizedConfig.experiences.map((experience, index) => (
+										<article
+											className="experience-row"
+											key={`${experience.company}-${experience.from}-${index}`}
+										>
+											<time>
+												{experience.from} — {experience.to}
+											</time>
+											<div>
+												<h3>{experience.position}</h3>
+												{experience.companyLink ? (
+													<a
+														className="accent-link"
+														href={experience.companyLink}
+														target="_blank"
+														rel="noreferrer"
+													>
+														{experience.company} <FiArrowUpRight />
+													</a>
+												) : (
+													<p className="accent-link">{experience.company}</p>
+												)}
+											</div>
+										</article>
+									))}
+								</div>
+							</section>
+						)}
+
+						{sanitizedConfig.educations.length > 0 && (
+							<section className="terminal-section" id="education">
+								<SectionHeading number={sectionNumber++} title="EDUCATION" />
+								<div className="experience-list">
+									{sanitizedConfig.educations.map((education, index) => (
+										<article
+											className="experience-row"
+											key={`${education.institution}-${education.from}-${index}`}
+										>
+											<time>
+												{education.from} — {education.to}
+											</time>
+											<div>
+												<h3>{education.degree}</h3>
+												<p className="accent-link">{education.institution}</p>
+											</div>
+										</article>
+									))}
+								</div>
+							</section>
+						)}
+					</div>
+
+					{Object.keys(sanitizedConfig.skills).length > 0 && (
 						<section className="terminal-section" id="stack">
 							<SectionHeading number={sectionNumber++} title="STACK" />
 							<div className="stack-columns">
@@ -401,61 +485,6 @@ const GitProfile = ({ config }: { config: Config }) => {
 										</a>
 									),
 								)}
-							</div>
-						</section>
-					)}
-
-					{sanitizedConfig.experiences.length > 0 && (
-						<section className="terminal-section" id="experience">
-							<SectionHeading number={sectionNumber++} title="EXPERIENCE" />
-							<div className="experience-list">
-								{sanitizedConfig.experiences.map((experience, index) => (
-									<article
-										className="experience-row"
-										key={`${experience.company}-${experience.from}-${index}`}
-									>
-										<time>
-											{experience.from} — {experience.to}
-										</time>
-										<div>
-											<h3>{experience.position}</h3>
-											{experience.companyLink ? (
-												<a
-													className="accent-link"
-													href={experience.companyLink}
-													target="_blank"
-													rel="noreferrer"
-												>
-													{experience.company} <FiArrowUpRight />
-												</a>
-											) : (
-												<p className="accent-link">{experience.company}</p>
-											)}
-										</div>
-									</article>
-								))}
-							</div>
-						</section>
-					)}
-
-					{sanitizedConfig.educations.length > 0 && (
-						<section className="terminal-section" id="education">
-							<SectionHeading number={sectionNumber++} title="EDUCATION" />
-							<div className="experience-list">
-								{sanitizedConfig.educations.map((education, index) => (
-									<article
-										className="experience-row"
-										key={`${education.institution}-${education.from}-${index}`}
-									>
-										<time>
-											{education.from} — {education.to}
-										</time>
-										<div>
-											<h3>{education.degree}</h3>
-											<p className="accent-link">{education.institution}</p>
-										</div>
-									</article>
-								))}
 							</div>
 						</section>
 					)}
@@ -516,9 +545,9 @@ const GitProfile = ({ config }: { config: Config }) => {
 					)}
 
 					{sanitizedConfig.certifications.length > 0 && (
-						<section className="terminal-section">
+						<section className="terminal-section" id="certifications">
 							<SectionHeading number={sectionNumber++} title="CERTIFICATIONS" />
-							<div className="terminal-card-grid">
+							<div className="terminal-card-grid certification-grid">
 								{sanitizedConfig.certifications.map((certification, index) => (
 									<a
 										className="terminal-card"
@@ -529,7 +558,7 @@ const GitProfile = ({ config }: { config: Config }) => {
 									>
 										<span className="file-label">[{certification.year}]</span>
 										<h3>{certification.name}</h3>
-										<p>{certification.body}</p>
+										{certification.body && <p>{certification.body}</p>}
 									</a>
 								))}
 							</div>

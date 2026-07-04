@@ -12,7 +12,7 @@ const CONFIG = {
   base: '/',
   projects: {
     github: {
-      display: true,
+      display: false,
       header: 'Github Projects',
       mode: 'manual',
       automatic: {
@@ -29,7 +29,7 @@ const CONFIG = {
           'JuanjoLopez19/GungeonFinder',
           'JuanjoLopez19/Goose',
           'JuanjoLopez19/url-shortener-fastapi',
-        ], // List of repository names to display. example: ['arifszn/my-project1', 'arifszn/my-project2']
+        ],
       },
     },
     external: {
@@ -38,14 +38,14 @@ const CONFIG = {
         {
           title: 'MercaSaver',
           description:
-            'Built a tool that track the expenses from the supermarket brand ”Mercadona”',
+            'Built a web app that turns different supermarket receipts into clear spending insights, helping users track purchases and find ways to save.',
           imageUrl: 'https://merca-saver.vercel.app/favicon.svg',
           link: 'https://merca-saver.vercel.app',
         },
         {
           title: 'FastCutPy',
           description:
-            'Built serverless url shortener with FastAPI and MongoDB',
+            'Cloud URL Shortener',
           imageUrl: 'https://fastcutpy.vercel.app/static/logo.webp',
           link: 'https://fastcutpy.vercel.app/',
         },
@@ -53,8 +53,8 @@ const CONFIG = {
     },
   },
   seo: {
-    title: 'Juanjo López | Software Engineer',
-    description: 'Backend Developer | BISITE Research Group',
+    title: 'Juanjo López | Senior AI & Backend Developer',
+    description: 'Senior AI & Backend Developer | Emergya',
     imageURL: 'https://avatars.githubusercontent.com/u/92031193?v=4',
   },
   social: {
@@ -66,51 +66,71 @@ const CONFIG = {
   },
   resume: {
     fileUrl:
-      'https://github.com/JuanjoLopez19/assets/raw/refs/heads/main/CV_English.pdf', // Empty fileUrl will hide the `Download Resume` button.
+      'https://github.com/JuanjoLopez19/assets/raw/refs/heads/main/CV_English.pdf',
   },
-  skills: [
-    'JavaScript',
-    'TypeScript',
-    'Node.js',
-    'Python',
-    'Selenium',
-    'Flask',
-    'Django',
-    'ExpressJs',
-    'VueJS',
-    'Angular',
-    'MongoDB',
-    'PostgreSQL',
-    'Redis',
-    'Prisma',
-    'Sequelize',
-    'Docker',
-    'AWS',
+  skills: {
+    Backend: [
+      'FastAPI',
+      'Flask',
+      'ExpressJs',
+      'NestJS',
+      'ORM (Prisma, Sequelize, SQLAlchemy)',
+
+    ],
+    Databases: ["PostgreSQL", "MongoDB", "Redis", 'DynamoDB', 'Elasticsearch'],
+    AI: [
+      'LangChain',
+      'LangGraph',
+      'RAG (GCP Datastores)'
+    ],
+    DevOps: [
+      'Docker',
+      'AWS',
+      'GCP',
+      'Github Actions',
+      'Jenkins'
+    ],
+  },
+  experiences: [{
+    company: 'Emergya',
+    position: 'Senior AI & Backend Developer',
+    from: 'September 2025',
+    to: 'Present',
+    companyLink: 'https://www.emergya.com/es',
+  },
+  {
+    company: 'BISITE Research Group',
+    position: 'Backend Developer',
+    from: 'May 2023',
+    to: 'September 2025',
+    companyLink: 'https://bisite.usal.es/',
+  },
+  {
+    company: 'BISITE Research Group',
+    position: 'Full Stack Developer',
+    from: 'March 2022',
+    to: 'April 2023',
+    companyLink: 'https://bisite.usal.es/',
+  },
+  {
+    company: 'BISITE Research Group',
+    position: 'Intern',
+    from: 'October 2021',
+    to: 'February 2022',
+    companyLink: 'https://bisite.usal.es/',
+  },
   ],
-  experiences: [
-    {
-      company: 'BISITE Research Group',
-      position: 'Backend Developer',
-      from: 'May 2023',
-      to: 'Present',
-      companyLink: 'https://bisite.usal.es/',
-    },
-    {
-      company: 'BISITE Research Group',
-      position: 'Full Stack Developer',
-      from: 'March 2022',
-      to: 'April 2023',
-      companyLink: 'https://bisite.usal.es/',
-    },
-    {
-      company: 'BISITE Research Group',
-      position: 'Intern',
-      from: 'October 2021',
-      to: 'February 2022',
-      companyLink: 'https://bisite.usal.es/',
-    },
+  certifications: [{
+    name: 'AWS Certified Solutions Architect - Associate',
+    year: '2026',
+    link: 'https://www.credly.com/badges/dad42bfc-736e-4899-bd10-f9589e2c1bd1',
+  },
+  {
+    name: 'AWS Certified Developer - Associate',
+    year: '2026',
+    link: 'https://www.credly.com/badges/2e82261f-0d80-4522-9061-64a47b21d08d',
+  },
   ],
-  certifications: [],
   educations: [
     {
       institution: 'Salamanca University',
@@ -125,49 +145,12 @@ const CONFIG = {
       to: '2023',
     },
   ],
-  publications: [],
-  // Display articles from your medium or dev account. (Optional)
-  blog: {
-    source: 'medium',
-    username: 'juanjolopez19',
-    limit: 3,
-  },
-  googleAnalytics: {
-    id: 'G-TM0MG46RQD', // GA3 tracking id/GA4 tag id UA-XXXXXXXXX-X | G-XXXXXXXXXX
-  },
-  // Track visitor interaction and behavior. https://www.hotjar.com
-  hotjar: {
-    id: '',
-    snippetVersion: 6,
-  },
   themeConfig: {
     defaultTheme: 'dark',
-
-    // Hides the switch in the navbar
-    // Useful if you want to support a single color mode
     disableSwitch: false,
-
-    // Should use the prefers-color-scheme media-query,
-    // using user system preferences, instead of the hardcoded defaultTheme
     respectPrefersColorScheme: true,
-
-    // Display the ring in Profile picture
-    displayAvatarRing: true,
-
-    // Available themes. To remove any theme, exclude from here.
     themes: ['light', 'dark'],
-
-    // Custom theme, applied to `procyon` theme
-
   },
-
-  // Optional Footer. Supports plain text or HTML.
-  footer: `Made with <a 
-      class="text-primary" href="https://github.com/arifszn/gitprofile"
-      target="_blank"
-      rel="noreferrer"
-    >GitProfile</a> and ❤️`,
-
   enablePWA: true,
 };
 

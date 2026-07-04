@@ -232,6 +232,7 @@ button {
 	max-width: 100%;
 	margin: 0 0 32px;
 	overflow-x: auto;
+	overflow-y: hidden;
 	color: var(--accent);
 	font-family: "JetBrains Mono", monospace;
 	font-size: clamp(10px, 1.22vw, 17px);
@@ -300,7 +301,7 @@ button {
 
 .stack-columns {
 	display: grid;
-	grid-template-columns: repeat(3, minmax(0, 1fr));
+	grid-template-columns: repeat(4, minmax(0, 1fr));
 	gap: 32px;
 }
 
@@ -343,6 +344,11 @@ button {
 	border-radius: 2px;
 	background: transparent;
 	transition: 150ms ease;
+}
+
+.certification-grid .terminal-card {
+	min-height: 160px;
+	padding: 20px;
 }
 
 .terminal-card:hover {
@@ -428,6 +434,34 @@ button {
 	display: flex;
 	flex-direction: column;
 	gap: 48px;
+}
+
+.resume-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 64px;
+}
+
+.resume-grid > .terminal-section:only-child {
+	grid-column: 1 / -1;
+}
+.resume-grid > #experience + #education {
+	position: relative;
+}
+
+.resume-grid > #experience + #education::before {
+	position: absolute;
+	top: 89px;
+	bottom: 0;
+	left: -32px;
+	width: 1px;
+	background: var(--hairline);
+	content: "";
+}
+
+.resume-grid .experience-row {
+	grid-template-columns: 120px minmax(0, 1fr);
+	gap: 20px;
 }
 
 .experience-row {
@@ -589,14 +623,33 @@ button {
 		font-size: 18px;
 	}
 
-	.stack-columns,
-	.terminal-card-grid {
+	.terminal-card-grid,
+	.resume-grid {
 		grid-template-columns: 1fr;
+	}
+
+	.stack-columns {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 24px 18px;
+	}
+
+	.certification-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 16px;
 	}
 
 	.experience-row {
 		grid-template-columns: 1fr;
 		gap: 8px;
+	}
+
+	.resume-grid .experience-row {
+		grid-template-columns: 1fr;
+		gap: 8px;
+	}
+
+	.resume-grid > #experience + #education::before {
+		display: none;
 	}
 
 	.terminal-section {
@@ -614,6 +667,16 @@ button {
 
 	.footer-socials {
 		justify-content: flex-start;
+	}
+}
+
+@media (max-width: 520px) {
+	.stack-columns {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.certification-grid {
+		grid-template-columns: 1fr;
 	}
 }
 
