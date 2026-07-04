@@ -1,4 +1,3 @@
-import { Fragment } from 'react';
 import type { SanitizedPublication } from '../../interfaces/sanitized-config';
 import { skeleton } from '../../utils';
 
@@ -74,10 +73,10 @@ const PublicationCard = ({
   };
 
   const renderPublications = () => {
-    return publications.map((item, index) => (
+    return publications.map((item) => (
       <a
         className="card shadow-lg compact bg-base-100 cursor-pointer"
-        key={index}
+        key={item.link}
         href={item.link}
         target="_blank"
         rel="noreferrer"
@@ -118,34 +117,32 @@ const PublicationCard = ({
   };
 
   return (
-    <Fragment>
-      <div className="col-span-1 lg:col-span-2">
-        <div className="grid grid-cols-2 gap-6">
-          <div className="col-span-2">
-            <div className="card compact bg-base-100 shadow bg-opacity-40">
-              <div className="card-body">
-                <div className="mx-3 flex items-center justify-between mb-2">
-                  <h5 className="card-title">
-                    {loading ? (
-                      skeleton({ widthCls: 'w-40', heightCls: 'h-8' })
-                    ) : (
-                      <span className="text-base-content opacity-70">
-                        Publications
-                      </span>
-                    )}
-                  </h5>
-                </div>
-                <div className="col-span-2">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {loading ? renderSkeleton() : renderPublications()}
-                  </div>
+    <div className="col-span-1 lg:col-span-2">
+      <div className="grid grid-cols-2 gap-6">
+        <div className="col-span-2">
+          <div className="card compact bg-base-100 shadow bg-opacity-40">
+            <div className="card-body">
+              <div className="mx-3 flex items-center justify-between mb-2">
+                <h5 className="card-title">
+                  {loading ? (
+                    skeleton({ widthCls: 'w-40', heightCls: 'h-8' })
+                  ) : (
+                    <span className="text-base-content opacity-70">
+                      Publications
+                    </span>
+                  )}
+                </h5>
+              </div>
+              <div className="col-span-2">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {loading ? renderSkeleton() : renderPublications()}
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </Fragment>
+    </div>
   );
 };
 

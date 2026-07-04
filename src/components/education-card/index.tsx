@@ -66,20 +66,16 @@ const EducationCard = ({
         </div>
         <div className="text-base-content text-opacity-60">
           <ol className="relative border-l border-base-300 border-opacity-30 my-2 mx-4">
-            {loading ? (
-              renderSkeleton()
-            ) : (
-              <>
-                {educations.map((item, index) => (
+            {loading
+              ? renderSkeleton()
+              : educations.map((item) => (
                   <ListItem
-                    key={index}
+                    key={`${item.institution}-${item.degree}-${item.from}`}
                     time={`${item.from} - ${item.to}`}
                     degree={item.degree}
                     institution={item.institution}
                   />
                 ))}
-              </>
-            )}
           </ol>
         </div>
       </div>

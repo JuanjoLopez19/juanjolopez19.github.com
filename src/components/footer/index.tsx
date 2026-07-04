@@ -14,6 +14,7 @@ const Footer = ({
       {loading ? (
         skeleton({ widthCls: 'w-52', heightCls: 'h-6' })
       ) : (
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: footer content is provided by the site owner and intentionally rendered as HTML
         <div dangerouslySetInnerHTML={{ __html: content }} />
       )}
     </div>

@@ -10,13 +10,13 @@ import { Fragment, useEffect, useState } from 'react';
  *
  * @returns {ReactElement} The LazyImage component.
  */
-const LazyImage: React.FC<{
-  placeholder: React.ReactElement;
-  src: string;
-  alt: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  [key: string]: any;
-}> = ({ placeholder, src, alt, ...rest }): React.ReactElement => {
+const LazyImage: React.FC<
+  {
+    placeholder: React.ReactElement;
+    src: string;
+    alt: string;
+  } & React.ImgHTMLAttributes<HTMLImageElement>
+> = ({ placeholder, src, alt, ...rest }): React.ReactElement => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

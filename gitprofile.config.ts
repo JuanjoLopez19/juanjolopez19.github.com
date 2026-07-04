@@ -44,8 +44,7 @@ const CONFIG = {
         },
         {
           title: 'FastCutPy',
-          description:
-            'Cloud URL Shortener',
+          description: 'Cloud URL Shortener',
           imageUrl: 'https://fastcutpy.vercel.app/static/logo.webp',
           link: 'https://fastcutpy.vercel.app/',
         },
@@ -75,61 +74,52 @@ const CONFIG = {
       'ExpressJs',
       'NestJS',
       'ORM (Prisma, Sequelize, SQLAlchemy)',
-
     ],
-    Databases: ["PostgreSQL", "MongoDB", "Redis", 'DynamoDB', 'Elasticsearch'],
-    AI: [
-      'LangChain',
-      'LangGraph',
-      'RAG (GCP Datastores)'
-    ],
-    DevOps: [
-      'Docker',
-      'AWS',
-      'GCP',
-      'Github Actions',
-      'Jenkins'
-    ],
+    Databases: ['PostgreSQL', 'MongoDB', 'Redis', 'DynamoDB', 'Elasticsearch'],
+    AI: ['LangChain', 'LangGraph', 'RAG (GCP Datastores)'],
+    DevOps: ['Docker', 'AWS', 'GCP', 'Github Actions', 'Jenkins'],
   },
-  experiences: [{
-    company: 'Emergya',
-    position: 'Senior AI & Backend Developer',
-    from: 'September 2025',
-    to: 'Present',
-    companyLink: 'https://www.emergya.com/es',
-  },
-  {
-    company: 'BISITE Research Group',
-    position: 'Backend Developer',
-    from: 'May 2023',
-    to: 'September 2025',
-    companyLink: 'https://bisite.usal.es/',
-  },
-  {
-    company: 'BISITE Research Group',
-    position: 'Full Stack Developer',
-    from: 'March 2022',
-    to: 'April 2023',
-    companyLink: 'https://bisite.usal.es/',
-  },
-  {
-    company: 'BISITE Research Group',
-    position: 'Intern',
-    from: 'October 2021',
-    to: 'February 2022',
-    companyLink: 'https://bisite.usal.es/',
-  },
+  experiences: [
+    {
+      company: 'Emergya',
+      position: 'Senior AI & Backend Developer',
+      from: 'September 2025',
+      to: 'Present',
+      companyLink: 'https://www.emergya.com/es',
+    },
+    {
+      company: 'BISITE Research Group',
+      position: 'Backend Developer',
+      from: 'May 2023',
+      to: 'September 2025',
+      companyLink: 'https://bisite.usal.es/',
+    },
+    {
+      company: 'BISITE Research Group',
+      position: 'Full Stack Developer',
+      from: 'March 2022',
+      to: 'April 2023',
+      companyLink: 'https://bisite.usal.es/',
+    },
+    {
+      company: 'BISITE Research Group',
+      position: 'Intern',
+      from: 'October 2021',
+      to: 'February 2022',
+      companyLink: 'https://bisite.usal.es/',
+    },
   ],
-  certifications: [{
-    name: 'AWS Certified Solutions Architect - Associate',
-    year: '2026',
-    link: 'https://www.credly.com/badges/dad42bfc-736e-4899-bd10-f9589e2c1bd1',
-  },
-  {
-    name: 'AWS Certified Developer - Associate',
-    year: '2026',
-    link: 'https://www.credly.com/badges/2e82261f-0d80-4522-9061-64a47b21d08d',
-  },
+  certifications: [
+    {
+      name: 'AWS Certified Solutions Architect - Associate',
+      year: '2026',
+      link: 'https://www.credly.com/badges/dad42bfc-736e-4899-bd10-f9589e2c1bd1',
+    },
+    {
+      name: 'AWS Certified Developer - Associate',
+      year: '2026',
+      link: 'https://www.credly.com/badges/2e82261f-0d80-4522-9061-64a47b21d08d',
+    },
   ],
   educations: [
     {

@@ -440,4 +440,8 @@ interface Config {
   enablePWA?: boolean;
 }
 
+interface Window {
+  gtag?: (...args: unknown[]) => void;
+}
+
 declare const CONFIG: Config;

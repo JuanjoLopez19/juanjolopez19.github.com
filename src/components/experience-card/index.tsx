@@ -1,5 +1,4 @@
 import type React from 'react';
-import { Fragment } from 'react';
 import type { SanitizedExperience } from '../../interfaces/sanitized-config';
 import { skeleton } from '../../utils';
 
@@ -72,13 +71,11 @@ const ExperienceCard = ({
         </div>
         <div className="text-base-content text-opacity-60">
           <ol className="relative border-l border-base-300 border-opacity-30 my-2 mx-4">
-            {loading ? (
-              renderSkeleton()
-            ) : (
-              <Fragment>
-                {experiences.map((experience, index) => (
+            {loading
+              ? renderSkeleton()
+              : experiences.map((experience) => (
                   <ListItem
-                    key={index}
+                    key={`${experience.company}-${experience.position}-${experience.from}`}
                     time={`${experience.from} - ${experience.to}`}
                     position={experience.position}
                     company={experience.company}
@@ -89,8 +86,6 @@ const ExperienceCard = ({
                     }
                   />
                 ))}
-              </Fragment>
-            )}
           </ol>
         </div>
       </div>
