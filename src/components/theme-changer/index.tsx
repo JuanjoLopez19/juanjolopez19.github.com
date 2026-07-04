@@ -26,7 +26,7 @@ const ThemeChanger = ({
   themeConfig: SanitizedThemeConfig;
 }) => {
   const changeTheme = (
-    e: MouseEvent<HTMLAnchorElement>,
+    e: MouseEvent<HTMLButtonElement>,
     selectedTheme: string,
   ) => {
     e.preventDefault();
@@ -71,8 +71,8 @@ const ThemeChanger = ({
             })
           ) : (
             <div title="Change Theme" className="dropdown dropdown-end">
-              <div
-                tabIndex={0}
+              <button
+                type="button"
                 className="btn btn-ghost m-1 normal-case opacity-50 text-base-content"
               >
                 <AiOutlineControl className="inline-block w-5 h-5 stroke-current md:mr-2" />
@@ -81,31 +81,29 @@ const ThemeChanger = ({
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 1792 1792"
                   className="inline-block w-4 h-4 ml-1 fill-current"
+                  aria-hidden="true"
                 >
                   <path d="M1395 736q0 13-10 23l-466 466q-10 10-23 10t-23-10l-466-466q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l393 393 393-393q10-10 23-10t23 10l50 50q10 10 10 23z" />
                 </svg>
-              </div>
-              <div
-                tabIndex={0}
-                className="mt-16 overflow-y-auto shadow-2xl top-px dropdown-content max-h-96 w-52 rounded-lg bg-base-200 text-base-content z-10"
-              >
+              </button>
+              <div className="mt-16 overflow-y-auto shadow-2xl top-px dropdown-content max-h-96 w-52 rounded-lg bg-base-200 text-base-content z-10">
                 <ul className="p-4 menu compact">
                   {[
                     themeConfig.defaultTheme,
                     ...themeConfig.themes.filter(
                       (item) => item !== themeConfig.defaultTheme,
                     ),
-                  ].map((item, index) => (
-                    <li key={index}>
-                      {}
-                      <a
+                  ].map((item) => (
+                    <li key={item}>
+                      <button
+                        type="button"
                         onClick={(e) => changeTheme(e, item)}
                         className={`${theme === item ? 'active' : ''}`}
                       >
                         <span className="opacity-60 capitalize">
                           {item === themeConfig.defaultTheme ? 'Default' : item}
                         </span>
-                      </a>
+                      </button>
                     </li>
                   ))}
                 </ul>

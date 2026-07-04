@@ -1,4 +1,3 @@
-import { Fragment } from 'react';
 import { AiOutlineFork, AiOutlineStar } from 'react-icons/ai';
 import { MdInsertLink } from 'react-icons/md';
 import type { GithubProject } from '../../interfaces/github-project';
@@ -74,11 +73,11 @@ const GithubProjectCard = ({
   };
 
   const renderProjects = () => {
-    return githubProjects.map((item, index) => (
+    return githubProjects.map((item) => (
       <a
         className="card shadow-lg compact bg-base-100 cursor-pointer"
         href={item.html_url}
-        key={index}
+        key={item.id}
         onClick={(e) => {
           e.preventDefault();
 
@@ -134,46 +133,44 @@ const GithubProjectCard = ({
   };
 
   return (
-    <Fragment>
-      <div className="col-span-1 lg:col-span-2">
-        <div className="grid grid-cols-2 gap-6">
-          <div className="col-span-2">
-            <div className="card compact bg-base-100 shadow bg-opacity-40">
-              <div className="card-body">
-                <div className="mx-3 flex items-center justify-between mb-2">
-                  <h5 className="card-title">
-                    {loading ? (
-                      skeleton({ widthCls: 'w-40', heightCls: 'h-8' })
-                    ) : (
-                      <span className="text-base-content opacity-70">
-                        {header}
-                      </span>
-                    )}
-                  </h5>
+    <div className="col-span-1 lg:col-span-2">
+      <div className="grid grid-cols-2 gap-6">
+        <div className="col-span-2">
+          <div className="card compact bg-base-100 shadow bg-opacity-40">
+            <div className="card-body">
+              <div className="mx-3 flex items-center justify-between mb-2">
+                <h5 className="card-title">
                   {loading ? (
-                    skeleton({ widthCls: 'w-10', heightCls: 'h-5' })
+                    skeleton({ widthCls: 'w-40', heightCls: 'h-8' })
                   ) : (
-                    <a
-                      href={`https://github.com/${username}?tab=repositories`}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-base-content opacity-50 hover:underline"
-                    >
-                      See All
-                    </a>
+                    <span className="text-base-content opacity-70">
+                      {header}
+                    </span>
                   )}
-                </div>
-                <div className="col-span-2">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {loading ? renderSkeleton() : renderProjects()}
-                  </div>
+                </h5>
+                {loading ? (
+                  skeleton({ widthCls: 'w-10', heightCls: 'h-5' })
+                ) : (
+                  <a
+                    href={`https://github.com/${username}?tab=repositories`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-base-content opacity-50 hover:underline"
+                  >
+                    See All
+                  </a>
+                )}
+              </div>
+              <div className="col-span-2">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {loading ? renderSkeleton() : renderProjects()}
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </Fragment>
+    </div>
   );
 };
 

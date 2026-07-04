@@ -92,11 +92,11 @@ const BlogCard = ({
   };
 
   const renderArticles = () => {
-    return articles && articles.length ? (
-      articles.slice(0, blog.limit).map((article, index) => (
+    return articles?.length ? (
+      articles.slice(0, blog.limit).map((article) => (
         <a
           className="card shadow-lg compact bg-base-100 cursor-pointer"
-          key={index}
+          key={article.link}
           href={article.link}
           onClick={(e) => {
             e.preventDefault();
@@ -144,10 +144,10 @@ const BlogCard = ({
                       {article.description}
                     </p>
                     <div className="mt-4 flex items-center flex-wrap justify-center md:justify-start">
-                      {article.categories.map((category, index2) => (
+                      {article.categories.map((category) => (
                         <div
                           className="py-2 px-4 text-xs leading-3 rounded-full bg-base-300 mr-1 mb-1 opacity-50 text-base-content"
-                          key={index2}
+                          key={category}
                         >
                           #{category}
                         </div>
@@ -176,7 +176,7 @@ const BlogCard = ({
         <div className="col-span-2">
           <div
             className={`card compact bg-base-100 ${
-              loading || (articles && articles.length)
+              loading || (articles?.length)
                 ? 'shadow bg-opacity-40'
                 : 'shadow-lg'
             }`}

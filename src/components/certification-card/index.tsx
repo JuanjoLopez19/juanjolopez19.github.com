@@ -74,21 +74,17 @@ const CertificationCard = ({
         </div>
         <div className="text-base-content text-opacity-60">
           <ol className="relative border-l border-base-300 border-opacity-30 my-2 mx-4">
-            {loading ? (
-              renderSkeleton()
-            ) : (
-              <>
-                {certifications.map((certification, index) => (
+            {loading
+              ? renderSkeleton()
+              : certifications.map((certification) => (
                   <ListItem
-                    key={index}
+                    key={certification.name}
                     year={certification.year}
                     name={certification.name}
                     body={certification.body}
                     link={certification.link}
                   />
                 ))}
-              </>
-            )}
           </ol>
         </div>
       </div>

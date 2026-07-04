@@ -1,4 +1,3 @@
-import { Fragment } from 'react';
 import type { SanitizedExternalProject } from '../../interfaces/sanitized-config';
 import { ga, skeleton } from '../../utils';
 import LazyImage from '../lazy-image';
@@ -67,10 +66,10 @@ const ExternalProjectCard = ({
   };
 
   const renderExternalProjects = () => {
-    return externalProjects.map((item, index) => (
+    return externalProjects.map((item) => (
       <a
         className="card shadow-lg compact bg-base-100 cursor-pointer"
-        key={index}
+        key={item.link}
         href={item.link}
         onClick={(e) => {
           e.preventDefault();
@@ -124,34 +123,32 @@ const ExternalProjectCard = ({
   };
 
   return (
-    <Fragment>
-      <div className="col-span-1 lg:col-span-2">
-        <div className="grid grid-cols-2 gap-6">
-          <div className="col-span-2">
-            <div className="card compact bg-base-100 shadow bg-opacity-40">
-              <div className="card-body">
-                <div className="mx-3 flex items-center justify-between mb-2">
-                  <h5 className="card-title">
-                    {loading ? (
-                      skeleton({ widthCls: 'w-40', heightCls: 'h-8' })
-                    ) : (
-                      <span className="text-base-content opacity-70">
-                        {header}
-                      </span>
-                    )}
-                  </h5>
-                </div>
-                <div className="col-span-2">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {loading ? renderSkeleton() : renderExternalProjects()}
-                  </div>
+    <div className="col-span-1 lg:col-span-2">
+      <div className="grid grid-cols-2 gap-6">
+        <div className="col-span-2">
+          <div className="card compact bg-base-100 shadow bg-opacity-40">
+            <div className="card-body">
+              <div className="mx-3 flex items-center justify-between mb-2">
+                <h5 className="card-title">
+                  {loading ? (
+                    skeleton({ widthCls: 'w-40', heightCls: 'h-8' })
+                  ) : (
+                    <span className="text-base-content opacity-70">
+                      {header}
+                    </span>
+                  )}
+                </h5>
+              </div>
+              <div className="col-span-2">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {loading ? renderSkeleton() : renderExternalProjects()}
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </Fragment>
+    </div>
   );
 };
 
