@@ -3,7 +3,7 @@ import { LOCAL_STORAGE_KEY_NAME } from '../constants';
 import { DEFAULT_CUSTOM_THEME } from '../constants/default-custom-theme';
 import { DEFAULT_THEMES } from '../constants/default-themes';
 import colors from '../data/colors.json';
-import {
+import type {
   SanitizedConfig,
   SanitizedHotjar,
   SanitizedThemeConfig,
@@ -151,7 +151,7 @@ export const getSanitizedConfig = (
       footer: config?.footer,
       enablePWA: config?.enablePWA ?? true,
     };
-  } catch (error) {
+  } catch {
     return {};
   }
 };
@@ -194,7 +194,7 @@ export const skeleton = ({
   style?: React.CSSProperties;
   shape?: string;
   className?: string | null;
-}): JSX.Element => {
+}): React.JSX.Element => {
   const classNames = ['bg-base-300', 'animate-pulse', shape];
   if (className) {
     classNames.push(className);

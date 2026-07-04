@@ -130,18 +130,18 @@ As this is a Vite project, you can also host your website to Netlify, Vercel, He
 - Install dependencies.
 
   ```shell
-  npm install
+  pnpm install
   ```
 
 - Run dev server.
 
   ```shell
-  npm run dev
+  pnpm run dev
   ```
 
 - Finally, visit `http://localhost:5173/gitprofile/` from your browser.
 
-> Alternatively, you can set up and run the project using Docker with **[Vail](https://github.com/arifszn/vail)**, a powerful tool for local development of JavaScript/TypeScript Apps.
+> Alternatively, you can set up and run the project using Docker: `docker compose up`.
 
 ## 🎨 Customization
 

@@ -1,14 +1,16 @@
-import { defineConfig } from 'vite';
+import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
+import { createHtmlPlugin } from 'vite-plugin-html';
 import { VitePWA } from 'vite-plugin-pwa';
 import CONFIG from './gitprofile.config';
-import { createHtmlPlugin } from 'vite-plugin-html';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   base: CONFIG.base || '/',
   plugins: [
     react(),
+    tailwindcss(),
     createHtmlPlugin({
       inject: {
         data: {
@@ -25,15 +27,17 @@ export default defineConfig({
             workbox: {
               navigateFallback: undefined,
             },
-            includeAssets: ['logo.png'],
+            includeAssets: ['android-icon-192x192.png'],
             manifest: {
               name: 'Portfolio',
               short_name: 'Portfolio',
               description: 'Personal Portfolio',
+              theme_color: '#071011',
+              background_color: '#071011',
               icons: [
                 {
-                  src: 'logo.png',
-                  sizes: '64x64 32x32 24x24 16x16 192x192 512x512',
+                  src: 'android-icon-192x192.png',
+                  sizes: '192x192',
                   type: 'image/png',
                 },
               ],

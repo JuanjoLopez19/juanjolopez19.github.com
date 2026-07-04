@@ -39,7 +39,7 @@ const CONFIG = {
           title: 'MercaSaver',
           description:
             'Built a tool that track the expenses from the supermarket brand ”Mercadona”',
-          imageUrl: 'https://merca-saver.vercel.app/static/assets/logo.webp',
+          imageUrl: 'https://merca-saver.vercel.app/favicon.svg',
           link: 'https://merca-saver.vercel.app',
         },
         {
@@ -141,11 +141,11 @@ const CONFIG = {
     snippetVersion: 6,
   },
   themeConfig: {
-    defaultTheme: 'emerald',
+    defaultTheme: 'dark',
 
     // Hides the switch in the navbar
     // Useful if you want to support a single color mode
-    disableSwitch: true,
+    disableSwitch: false,
 
     // Should use the prefers-color-scheme media-query,
     // using user system preferences, instead of the hardcoded defaultTheme
@@ -155,28 +155,10 @@ const CONFIG = {
     displayAvatarRing: true,
 
     // Available themes. To remove any theme, exclude from here.
-    themes: [
-      'light',
-      'dark',
-      'emerald',
-      'corporate',
-      'halloween',
-      'forest',
-      'aqua',
-      'lofi',
-      'business',
-    ],
+    themes: ['light', 'dark'],
 
     // Custom theme, applied to `procyon` theme
-    customTheme: {
-      primary: '#fc055b',
-      secondary: '#219aaf',
-      accent: '#e8d03a',
-      neutral: '#2A2730',
-      'base-100': '#E3E3ED',
-      '--rounded-box': '3rem',
-      '--rounded-btn': '3rem',
-    },
+
   },
 
   // Optional Footer. Supports plain text or HTML.

@@ -1,5 +1,5 @@
 import { FALLBACK_IMAGE } from '../../constants';
-import { Profile } from '../../interfaces/profile';
+import type { Profile } from '../../interfaces/profile';
 import { skeleton } from '../../utils';
 import LazyImage from '../lazy-image';
 
@@ -23,7 +23,7 @@ const AvatarCard: React.FC<AvatarCardProps> = ({
   loading,
   avatarRing,
   resumeFileUrl,
-}): JSX.Element => {
+}): React.JSX.Element => {
   return (
     <div className="card shadow-lg compact bg-base-100">
       <div className="grid place-items-center py-8">
