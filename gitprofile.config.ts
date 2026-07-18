@@ -12,7 +12,7 @@ const CONFIG = {
   base: '/',
   projects: {
     github: {
-      display: false,
+      display: true,
       header: 'Github Projects',
       mode: 'manual',
       automatic: {
@@ -26,9 +26,8 @@ const CONFIG = {
       manual: {
         projects: [
           'JuanjoLopez19/AutomatAPI',
-          'JuanjoLopez19/GungeonFinder',
-          'JuanjoLopez19/Goose',
           'JuanjoLopez19/url-shortener-fastapi',
+          'JuanjoLopez19/job-scrapper-mcp'
         ],
       },
     },
