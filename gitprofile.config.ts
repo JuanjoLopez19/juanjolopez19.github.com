@@ -26,8 +26,7 @@ const CONFIG = {
       manual: {
         projects: [
           'JuanjoLopez19/AutomatAPI',
-          'JuanjoLopez19/url-shortener-fastapi',
-          'JuanjoLopez19/job-scrapper-mcp'
+          'JuanjoLopez19/url-shortener-fastapi'
         ],
       },
     },
@@ -38,15 +37,29 @@ const CONFIG = {
           title: 'MercaSaver',
           description:
             'Built a web app that turns different supermarket receipts into clear spending insights, helping users track purchases and find ways to save.',
-          imageUrl: 'https://merca-saver.vercel.app/favicon.svg',
-          link: 'https://merca-saver.vercel.app',
+          imageUrl: 'https://mercasaver.jjlopez.dev/favicon.svg',
+          link: 'https://mercasaver.jjlopez.dev',
+        },
+        {
+          title: 'Job-Offer-Mcp',
+          description:
+            'Helpful tool that contains a Job Offer Scraper via MCP, that extracts de offer info, and two complementary skills one for the adapt of your cv to the offer and another to make a cover letter for the offer that has been given',
+          imageUrl: '',
+          link: 'https://job-scraper-mcp.jjlopez.dev',
+        },
+        {
+          title: 'Job-Talk',
+          description:
+            'WebSite that will be helpful to prepare Job Interviews with a NearReal Time conversation with TTS and STT with local models',
+          imageUrl: '',
+          link: 'https://job-talk.jjlopez.dev',
         },
         {
           title: 'FastCutPy',
           description: 'Cloud URL Shortener',
           imageUrl: 'https://fastcutpy.vercel.app/static/logo.webp',
           link: 'https://fastcutpy.vercel.app/',
-        },
+        }
       ],
     },
   },
@@ -58,7 +71,7 @@ const CONFIG = {
   social: {
     linkedin: 'juanjolopezgomez',
     phone: '',
-    email: 'juanjo.lopez.gomez.19@gmail.com',
+    email: 'contact@jjlopez.dev',
     stackoverflow: '24182064',
     medium: 'juanjolopez19',
   },
@@ -75,7 +88,7 @@ const CONFIG = {
       'ORM (Prisma, Sequelize, SQLAlchemy)',
     ],
     Databases: ['PostgreSQL', 'MongoDB', 'Redis', 'DynamoDB', 'Elasticsearch'],
-    AI: ['LangChain', 'LangGraph', 'RAG (GCP Datastores)'],
+    AI: ['LangChain', 'LangGraph', 'RAG (GCP Datastores)', 'Langfuse'],
     DevOps: ['Docker', 'AWS', 'GCP', 'Github Actions', 'Jenkins'],
   },
   experiences: [
